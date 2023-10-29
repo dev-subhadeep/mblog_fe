@@ -1,5 +1,6 @@
 import axios from "axios"
 import React, { useState } from "react"
+import { dburl } from "../utils/constants"
 
 const Register = () => {
   const initialState = {
@@ -23,7 +24,7 @@ const Register = () => {
         "Content-type": "application/json",
       },
       data: JSON.stringify(formData),
-      url: "https://fair-gear-hen.cyclic.app/user/create",
+      url: `${dburl}/user/create`,
     })
       .then((res) => setMessage(res.data.message))
       .catch((error) => setMessage(error))

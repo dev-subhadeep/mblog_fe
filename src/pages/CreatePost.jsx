@@ -1,5 +1,6 @@
 import axios from "axios"
 import React, { useEffect, useState } from "react"
+import { dburl } from "../utils/constants"
 
 const CreatePost = () => {
   const [title, setTitle] = useState("")
@@ -22,7 +23,7 @@ const CreatePost = () => {
     // console.log(blog)
     axios({
       method: "post",
-      url: "https://fair-gear-hen.cyclic.app/posts/create",
+      url: `${dburl}/posts/create`,
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,

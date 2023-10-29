@@ -1,5 +1,6 @@
 import axios from "axios"
 import React, { useState } from "react"
+import { dburl } from "../utils/constants"
 
 const Login = () => {
   const [username, setUsername] = useState("")
@@ -31,7 +32,7 @@ const Login = () => {
       },
       data: JSON.stringify(formData),
 
-      url: "https://fair-gear-hen.cyclic.app/user/login",
+      url: `${dburl}/user/login`,
     })
       .then((res) => {
         const token = res.data.token
