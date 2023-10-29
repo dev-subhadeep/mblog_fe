@@ -1,6 +1,7 @@
 import axios from "axios"
 import React, { useEffect, useState } from "react"
 import Post from "../components/Post"
+import { dburl } from "../utils/constants"
 
 const ShowPosts = () => {
   const [posts, setPosts] = useState([])
@@ -13,7 +14,7 @@ const ShowPosts = () => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      url: "https://fair-gear-hen.cyclic.app/posts/",
+      url: `${dburl}/posts/`,
     })
       .then((res) => {
         if (Array.isArray(res.data.posts)) {
