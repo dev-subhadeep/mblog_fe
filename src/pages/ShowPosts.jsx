@@ -4,13 +4,14 @@ import Post from "../components/Post"
 
 const ShowPosts = () => {
   const [posts, setPosts] = useState([])
+  const [token, setToken] = useState(localStorage.getItem("token"))
+
   useEffect(() => {
     axios({
       method: "get",
       headers: {
         "Content-Type": "application/json",
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1YmhhZGVlcCIsInVzZXJJRCI6IjY1M2RmZmQwODIwOTRiZjdmZDNlYzVhMiIsImlhdCI6MTY5ODU2MzE2MiwiZXhwIjoxNzAwOTgyMzYyfQ.qC7ua6IogLgs0qrIAMmSH1s_IAg1mcOWYzRMi7NGkEE",
+        Authorization: `Bearer ${token}`,
       },
       url: "https://fair-gear-hen.cyclic.app/posts/",
     })

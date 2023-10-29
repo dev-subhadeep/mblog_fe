@@ -34,6 +34,8 @@ const Login = () => {
       url: "https://fair-gear-hen.cyclic.app/user/login",
     })
       .then((res) => {
+        const token = res.data.token
+        localStorage.setItem("token", token)
         setMessage(res.data.message)
         setToken(res.data.token)
       })
