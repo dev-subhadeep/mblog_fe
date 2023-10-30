@@ -1,9 +1,10 @@
 import React from "react"
+import { Link } from "react-router-dom"
 
 const Navbar = () => {
   return (
     <div>
-      {/* <ul>
+      <ul>
         <li>
           <Link to="/">Show My Posts</Link>
         </li>
@@ -15,18 +16,6 @@ const Navbar = () => {
         </li>
         <li>
           <Link>Logout</Link>
-        </li>
-      </ul> */}
-
-      <ul>
-        <li>
-          <a href="/">My Posts</a>
-        </li>
-        <li>
-          <a href="/create">New + </a>
-        </li>
-        <li>
-          <a href="/register">Register</a>
         </li>
       </ul>
     </div>
